@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.example.a"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    // Butterknife requires Java 8. 在android中
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+// EventBus
+
+    implementation 'org.greenrobot:eventbus:3.1.1'
+//0.androidx
+    implementation 'com.google.android.material:material:1.2.0-alpha02'
+
+
+//1. gson解析依赖
+
+
+    implementation 'com.google.code.gson:gson:2.6.2'
+
+
+//2. glider异步加载图片依赖
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+//3.侧滑依赖
+
+
+//4.多布局依赖
+
+
+//5.BANNER依赖
+    implementation 'com.youth.banner:banner:1.4.10'
+
+
+//6.TabLyout依赖
+
+
+//7.多部局加载更多
+
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+
+
+//8.权限
+
+    implementation 'com.github.dfqin:grantor:2.5'
+
+
+//9.okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+//10.封装ok
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+
+//11.解析工厂
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+
+//rxjava
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0' // 必要依赖，解析json字符所用
+
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0' // 必要依赖，和Rxjava结合必须用到，下面会提到
+    implementation "io.reactivex.rxjava2:rxjava:2.1.3" // 必要rxjava2依赖
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+
+// Butterknife requires Java依赖
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+}
